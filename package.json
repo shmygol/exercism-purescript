@@ -1,0 +1,7 @@
+{
+    "name": "purescript-exercises",
+    "devDependencies": {
+        "purescript": "^0.14.7",
+        "spago": "^0.21.0"
+    }
+}
