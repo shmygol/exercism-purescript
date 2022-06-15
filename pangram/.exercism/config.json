@@ -1,0 +1,29 @@
+{
+  "authors": [
+    "lpil"
+  ],
+  "contributors": [
+    "colinwahl",
+    "icyrockcom",
+    "paf31",
+    "spicydonuts"
+  ],
+  "files": {
+    "solution": [
+      "src/Pangram.purs"
+    ],
+    "test": [
+      "test/Main.purs"
+    ],
+    "example": [
+      "examples/src/Pangram.purs"
+    ],
+    "invalidator": [
+      "packages.dhall",
+      "spago.dhall"
+    ]
+  },
+  "blurb": "Determine if a sentence is a pangram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}
