@@ -3,6 +3,7 @@ module Pangram
   ) where
 
 import Prelude
+import Data.Enum (enumFromTo)
 import Data.String.CodeUnits (toCharArray)
 import Data.String.Common (toLower)
 import Data.Set as Set
@@ -13,7 +14,4 @@ isPangram = Set.subset alphabet
             <<< toCharArray
             <<< toLower
     where
-        alphabet = Set.fromFoldable ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-                                     'i', 'g', 'k', 'l', 'm', 'n', 'o', 'p',
-                                     'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
-                                     'y', 'z']
+        alphabet = Set.fromFoldable (enumFromTo 'a' 'z' :: Array Char)
