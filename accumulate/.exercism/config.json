@@ -1,0 +1,29 @@
+{
+  "authors": [
+    "lpil"
+  ],
+  "contributors": [
+    "colinwahl",
+    "icyrockcom",
+    "spicydonuts",
+    "stevejb71"
+  ],
+  "files": {
+    "solution": [
+      "src/Accumulate.purs"
+    ],
+    "test": [
+      "test/Main.purs"
+    ],
+    "example": [
+      "examples/src/Accumulate.purs"
+    ],
+    "invalidator": [
+      "packages.dhall",
+      "spago.dhall"
+    ]
+  },
+  "blurb": "Implement the `accumulate` operation, which, given a collection and an operation to perform on each element of the collection, returns a new collection containing the result of applying that operation to each element of the input collection.",
+  "source": "Conversation with James Edward Gray II",
+  "source_url": "http://graysoftinc.com/"
+}
