@@ -3,7 +3,16 @@ module Accumulate
   ) where
 
 import Prelude
-import Data.List (List)
+import Data.List
+import Data.List.NonEmpty (fromList, head, tail) as NonEmptyList
+import Data.Maybe (maybe)
 
 accumulate :: forall a b. (a -> b) -> List a -> List b
-accumulate = map
+accumulate operation =
+    maybe
+        Nil
+        (\nonEmptyCollection ->
+            Cons
+                (operation (NonEmptyList.head nonEmptyCollection))
+                (accumulate operation (NonEmptyList.tail nonEmptyCollection)))
+    <<< NonEmptyList.fromList
