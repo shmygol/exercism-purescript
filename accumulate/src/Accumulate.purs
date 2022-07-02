@@ -12,7 +12,6 @@ accumulate operation =
     maybe
         Nil
         (\nonEmptyCollection ->
-            Cons
-                (operation $ NonEmptyList.head nonEmptyCollection)
-                (accumulate operation $ NonEmptyList.tail nonEmptyCollection))
+            (operation $ NonEmptyList.head nonEmptyCollection)
+            : (accumulate operation $ NonEmptyList.tail nonEmptyCollection))
     <<< NonEmptyList.fromList
