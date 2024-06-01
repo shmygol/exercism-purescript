@@ -7,14 +7,13 @@ import Data.Maybe (Maybe(Just, Nothing))
 import Data.Int (even)
 
 collatz :: Int -> Maybe Int
-collatz = recursive_collatz (Just 0)
+collatz = recursive_collatz 0
   where
-    incr = map $ add 1
-    recursive_collatz maybe_counter x
+    recursive_collatz counter x
       | x < 1 = Nothing
-      | x == 1 = maybe_counter
+      | x == 1 = Just counter
       | otherwise =
         recursive_collatz 
-          (incr maybe_counter)
+          (counter + 1)
           if even x then (x / 2) else (x * 3 + 1)
   
