@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "houli"
+  ],
+  "contributors": [
+    "colinwahl",
+    "spicydonuts"
+  ],
+  "files": {
+    "solution": [
+      "src/RnaTranscription.purs"
+    ],
+    "test": [
+      "test/Main.purs"
+    ],
+    "example": [
+      "examples/src/RnaTranscription.purs"
+    ],
+    "invalidator": [
+      "packages.dhall",
+      "spago.dhall"
+    ]
+  },
+  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
+  "source": "Hyperphysics",
+  "source_url": "https://web.archive.org/web/20220408112140/http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
+}
