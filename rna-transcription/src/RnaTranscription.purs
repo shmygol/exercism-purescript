@@ -3,8 +3,8 @@ module RnaTranscription
   ) where
 
 import Prelude
-import Data.Maybe
-import Data.Array (foldl)
+import Data.Maybe (Maybe)
+import Data.Traversable (traverse)
 import Data.Map as Map
 import Data.String.CodeUnits as String
 import Data.Tuple (Tuple(..))
@@ -19,10 +19,6 @@ transcript :: Char -> Maybe Char
 transcript = Map.lookup <@> rules
 
 toRNA :: String -> Maybe String
-toRNA = foldl foldingFunction (Just "")
+toRNA = map String.fromCharArray
+        <<< traverse transcript
         <<< String.toCharArray
-    where
-        foldingFunction :: Maybe String -> Char -> Maybe String
-        foldingFunction acc a = sonc <$> (transcript a) <*> acc
-        sonc :: Char -> String -> String
-        sonc c s = s <> String.singleton c
