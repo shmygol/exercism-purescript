@@ -1,7 +1,12 @@
 {
-    "name": "purescript-exercises",
+    "name": "exercism-purescript",
     "devDependencies": {
         "purescript": "^0.14.7",
         "spago": "^0.21.0"
+    },
+    "scripts": {
+        "spago": "cd ./${npm_config_exercise}/ && spago",
+        "exercism:download": "exercism download --track=purescript --exercise=${npm_config_exercise}",
+        "exercism:submit": "cd ./${npm_config_exercise}/ && exercism submit"
     }
 }
