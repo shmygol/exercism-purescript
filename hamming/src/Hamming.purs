@@ -13,8 +13,9 @@ distance :: String -> String -> Maybe Int
 distance a b | length a /= length b = Nothing
              | otherwise = Just
                            $ sum
-                           $ zipWith distanceForChars (toCharArray a) (toCharArray b)
+                           $ zipWith distanceForChars arrayA arrayB
   where
-    distanceForChars :: Char -> Char -> Int
     distanceForChars x y | x == y = 0
                          | otherwise = 1
+    arrayA = toCharArray a
+    arrayB = toCharArray b
