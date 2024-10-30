@@ -4,13 +4,20 @@ module DifferenceOfSquares
   , sumOfSquares
   ) where
 
-import Effect.Exception.Unsafe (unsafeThrow)
+
+import Prelude
+import Data.Foldable (sum)
+import Data.Array (range)
+import Data.Int (pow)
+
+square :: Int -> Int
+square = flip pow 2
 
 differenceOfSquares :: Int -> Int
-differenceOfSquares = unsafeThrow "You need to implement `differenceOfSquares`."
+differenceOfSquares n = (squareOfSum n) - (sumOfSquares n)
 
 squareOfSum :: Int -> Int
-squareOfSum = unsafeThrow "You need to implement `squareOfSum`."
+squareOfSum = square <<< sum <<< range 1
 
 sumOfSquares :: Int -> Int
-sumOfSquares = unsafeThrow "You need to implement `sumOfSquares`."
+sumOfSquares = sum <<< map square <<< range 1
